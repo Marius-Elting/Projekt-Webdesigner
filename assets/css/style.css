@@ -9,12 +9,17 @@
     font-weight: 600;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
     font-family: Roboto;
+    --h1: 5rem
 }
 
 
@@ -29,10 +34,9 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-bottom: 3px solid black;
 }
 
-header .Headline h1 {
+header .Headline h2 {
     font-size: 3rem;
     font-weight: 600;
     letter-spacing: -0.2rem;
@@ -66,7 +70,7 @@ header .Headline p {
 }
 
 .howto h1 {
-    font-size: 5rem;
+    font-size: var(--h1);
     font-weight: 600;
 }
 
@@ -81,6 +85,11 @@ header .Headline p {
     text-decoration: none;
     font-weight: 600;
     margin-top: 10rem;
+}
+
+.howto a:hover {
+    color: #0b0c17;
+    cursor: pointer;
 }
 
 .pics {
@@ -112,7 +121,7 @@ main {
 }
 
 .mainsec1 .idea h1 {
-    font-size: 5rem;
+    font-size: var(--h1);
     width: 35%;
     font-weight: 600;
 }
@@ -124,7 +133,7 @@ main {
 }
 
 .mainsec1>h1 {
-    font-size: 5rem;
+    font-size: var(--h1);
     font-weight: 600;
     width: 60%;
 }
@@ -188,7 +197,7 @@ main {
 }
 
 .go h1 {
-    font-size: 5rem;
+    font-size: var(--h1);
     font-weight: 600;
 }
 
@@ -222,8 +231,8 @@ main {
 }
 
 .steps h1 {
-    font-size: 10rem;
-    color: grey;
+    font-size: calc(var(--h1)*2);
+    color: #dddddd;
 }
 
 .steps article img {
@@ -277,7 +286,7 @@ footer article form {
 }
 
 footer article h1 {
-    font-size: 5rem;
+    font-size: var(--h1);
 }
 
 footer article p {
@@ -306,4 +315,137 @@ footer .love {
     margin-left: 10rem;
     margin-bottom: 3rem;
     font-size: 1.5rem;
+}
+
+
+@media only screen and (max-width: 900px) {
+    * {
+        font-size: 12px;
+        --h1: 3rem;
+    }
+
+    header .Headline {
+        height: 9rem;
+        background-color: white;
+        width: 100%;
+        display: flex;
+        ;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header {
+        background-position-y: 9rem;
+        height: 85vh;
+    }
+
+    header .howto {
+        width: 40%;
+    }
+
+    .howto a {
+        margin-top: 5rem;
+    }
+
+    main {
+        gap: 5rem;
+    }
+
+    .idea {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0.5rem;
+    }
+
+    .mainsec1 .idea p,
+    .mainsec1 .idea h1 {
+        width: 100%;
+    }
+
+    main .mainsec1 {
+        padding: 3rem;
+        gap: 4rem;
+    }
+
+    main .mainsec1 h1 {
+        width: 100%;
+    }
+
+    .points>div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .points div div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .go {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem;
+    }
+
+    .go h1 {
+        text-align: center;
+        ;
+    }
+
+    .steps {
+        padding: 2rem
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .steps img,
+    .steps article {
+        width: 100%;
+    }
+
+    footer {
+        margin-top: 10rem;
+        padding: 3rem;
+    }
+
+    footer article p {
+        font-size: 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    footer article form {
+        width: 90%;
+    }
+
+    footer article h1 {
+        text-align: center;
+    }
+
+
+
+    footer .love {
+        text-align: center;
+        margin: 0 0 5rem 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header .howto {
+        width: 70%;
+    }
 }
