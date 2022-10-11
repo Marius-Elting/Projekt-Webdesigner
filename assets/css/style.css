@@ -311,6 +311,10 @@ footer article form input {
     font-size: 2rem;
 }
 
+footer article form input[type="email"] {
+    box-shadow: 0 0 50rem grey;
+}
+
 footer article form input[type="submit"] {
     width: 70%;
     background-color: #ff3571;
