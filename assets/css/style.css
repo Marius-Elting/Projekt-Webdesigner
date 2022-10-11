@@ -19,7 +19,8 @@ html {
     box-sizing: border-box;
     font-size: 10px;
     font-family: Roboto;
-    --h1: 5rem
+    --h1: 5rem;
+    --fly: 10px;
 }
 
 
@@ -98,6 +99,11 @@ header .Headline p {
     width: 100%;
 }
 
+.flyingman {
+    height: 0px;
+    width: 0px;
+}
+
 /* 
 ================================================================
 !                           MAIN
@@ -156,7 +162,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
-    width: 40rem;
+    width: 40%;
 }
 
 .points h3 {
@@ -215,7 +221,7 @@ main {
 
 .steps {
     display: flex;
-    padding: 10rem;
+    padding: 5rem 10rem;
     justify-content: space-between;
 }
 
@@ -236,7 +242,7 @@ main {
 }
 
 .steps article img {
-    height: 3rem;
+    height: 5rem;
     width: auto;
     align-self: flex-start;
 }
@@ -311,13 +317,117 @@ footer article form input[type="submit"] {
     color: white;
 }
 
+footer article form input[type="submit"]:hover {
+    background: linear-gradient(0.25turn, #3C30FF, #ff3571);
+    cursor: pointer;
+}
+
+
 footer .love {
     margin-left: 10rem;
     margin-bottom: 3rem;
     font-size: 1.5rem;
 }
 
+/* 
+================================================================
+!                        Ab 1600px
+================================================================
+ */
 
+@media only screen and (min-width: 1600px) {
+    * {
+        font-size: 15px;
+        --h1: 3rem;
+        --fly: 10px
+    }
+}
+
+/* 
+================================================================
+!                        Ab 2000px
+================================================================
+ */
+
+@media only screen and (min-width: 2000px) {
+    * {
+        font-size: 18px;
+        --h1: 3rem;
+        --fly: 10px
+    }
+}
+
+/* 
+================================================================
+!                        Ab 1300px
+================================================================
+ */
+
+@media only screen and (min-width: 1301px) {
+    .flyingman {
+        position: absolute;
+        right: calc(var(--fly)*22);
+        height: calc(var(--fly)*80);
+        width: calc(var(--fly)*80);
+        animation-name: flyingman;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        top: 0rem;
+        animation-delay: -2s;
+    }
+
+    @keyframes flyingman {
+
+        0% {
+            top: 0rem
+        }
+
+        50% {
+            top: calc(var(--fly)*8);
+        }
+
+        100% {
+            top: 0rem
+        }
+    }
+}
+
+/* 
+================================================================
+!                        Bis 1300px
+================================================================
+ */
+@media only screen and (max-width: 1300px) {
+    * {
+        font-size: 12px;
+        --h1: 3rem;
+    }
+
+    header .howto {
+        width: 20%;
+    }
+
+    header .Headline {
+        height: 9rem;
+        background-color: white;
+        width: 100%;
+        display: flex;
+        ;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header {
+        background-position-y: 9rem;
+        height: 85vh;
+    }
+}
+
+/* 
+================================================================
+!                        Bis 900px
+================================================================
+ */
 @media only screen and (max-width: 900px) {
     * {
         font-size: 12px;
@@ -443,6 +553,12 @@ footer .love {
         margin: 0 0 5rem 0;
     }
 }
+
+/* 
+================================================================
+!                        Bis 600px
+================================================================
+ */
 
 @media only screen and (max-width: 600px) {
     header .howto {
